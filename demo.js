@@ -127,7 +127,7 @@ $(document).ready(function() {
 
 
                     $('#memberstable').html("</p>" + messagefilter + "</p>");
-                    $('#emailerr').append(emailfilter).css("color", "red");
+                    $('#emailerr').html(emailfilter).css("color", "red");
                     $('#namerr').html(namefilter);
                 },
                 error: function(data) {
