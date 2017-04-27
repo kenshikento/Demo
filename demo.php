@@ -101,15 +101,15 @@ function demo_select()
 
 function demo_select1($schoolID)
 {
-    global $conn;
-    $sql    = "SELECT Membername , Emailaddress ,MemberID  FROM member Where SchoolID = $schoolID";
-    $result = mysqli_query($conn, $sql); //*
+
+
+global $conn;
+
     $stmt   = $conn->prepare("SELECT Membername, Emailaddress ,MemberID FROM member WHERE SchoolID=?");
     $stmt->bind_param("i", $schoolID);
     $stmt->execute();
     $result = $stmt->get_result();
-    //  $stmt->free_result();
-    //    $stmt->close();
+
     $data   = array();
     while ($row = $result->fetch_array()) {
 
